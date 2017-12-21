@@ -20,9 +20,12 @@ export class ProductosService {
       this.htpp.get('https://paginawebangular-c5b64.firebaseio.com/productos_idx.json')
         .subscribe( res => {
 
-          console.log( res.json() );
-          this.cargando = false;
-          this.productos = res.json();
+          setTimeout( ()=>{
+            console.log( res.json() );
+            this.cargando = false;
+            this.productos = res.json();
+          },1500 );
+          
         });
 
   }
